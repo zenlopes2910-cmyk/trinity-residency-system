@@ -7,12 +7,16 @@
 <body>
 
 <div class="box">
-    <h2>Resident Details</h2>
+    <h2>House: {{house}}</h2>
 
-    <p>No. of Members: --</p>
+    <p><b>No. of Members:</b> {{members|length}}</p>
 
-    <button>View Members</button>
+    <button onclick="viewMembers('{{house}}')">
+        View Members
+    </button>
 </div>
+
+<script src="/static/script.js"></script>
 
 </body>
 </html>
