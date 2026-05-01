@@ -9,7 +9,31 @@
 <h2>Residents</h2>
 
 <div class="cards">
-    <!-- Cards will come from DB -->
+
+{% for f in flats %}
+
+    {% if f[2] == 0 %}
+        <div class="card">
+            <h3>Available</h3>
+            <p>Wing {{f[1]}} | {{f[0]}}</p>
+        </div>
+
+    {% elif f[3] %}
+        <div class="card" onclick="openDetails('{{f[0]}}')">
+            <h3>{{f[3]}}</h3>
+            <p>Wing {{f[1]}} | {{f[0]}}</p>
+        </div>
+
+    {% else %}
+        <div class="card" onclick="openDetails('{{f[0]}}')">
+            <h3>Tenants</h3>
+            <p>Wing {{f[1]}} | {{f[0]}}</p>
+        </div>
+
+    {% endif %}
+
+{% endfor %}
+
 </div>
 
 <script src="/static/script.js"></script>
