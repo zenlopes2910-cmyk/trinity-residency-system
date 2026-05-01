@@ -6,27 +6,52 @@
 </head>
 <body>
 
-<h2 class="title">Dashboard</h2>
+<div class="container">
 
-<div class="cards">
-
-    <div class="card" onclick="window.location.href='/residents'">
-        <h3>Residents</h3>
+    <div class="sidebar">
+        <h2>Trinity Residency</h2>
+        <ul>
+            <li onclick="go('/')">Dashboard</li>
+            <li onclick="go('/residents')">Residents</li>
+            <li>Complaints</li>
+            <li>Maintenance</li>
+            <li>Notices</li>
+            <li>Profile</li>
+        </ul>
     </div>
 
-    <div class="card">
-        <h3>Pending Complaints</h3>
-    </div>
+    <div class="main">
 
-    <div class="card">
-        <h3>Open Maintenance</h3>
-    </div>
+        <div class="topbar">
+            <h2>Welcome, {{user}} 👋</h2>
+        </div>
 
-    <div class="card">
-        <h3>Notices</h3>
+        <div class="cards">
+            <div class="card">
+                <h3>Residents</h3>
+                <p>--</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Complaints</h3>
+                <p>--</p>
+            </div>
+
+            <div class="card">
+                <h3>Open Maintenance</h3>
+                <p>--</p>
+            </div>
+
+            <div class="card">
+                <h3>Notices</h3>
+                <p>--</p>
+            </div>
+        </div>
+
     </div>
 
 </div>
 
+<script src="/static/script.js"></script>
 </body>
 </html>
