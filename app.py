@@ -3,22 +3,22 @@ import psycopg2
 
 app = Flask(__name__)
 
-# 🔌 CONNECT TO YOUR DATABASE
 conn = psycopg2.connect(
-    database="trinity_db",   # change if needed
+    database="trinity_db",
     user="postgres",
-    password="Zen2928@",
+    password="your_password",
     host="localhost",
     port="5432"
 )
 
-# 🏠 DASHBOARD
+# 🔹 Dashboard
 @app.route('/')
 def dashboard():
-    return render_template("index.html")
+    user_name = "Zen Lopes"  # temp (later from login)
+    return render_template("index.html", user=user_name)
 
 
-# 👥 RESIDENTS PAGE
+# 🔹 Residents Page
 @app.route('/residents')
 def residents():
     cur = conn.cursor()
@@ -44,40 +44,26 @@ def residents():
     return render_template("residents.html", flats=flats)
 
 
-# 📄 DETAILS PAGE
+# 🔹 Details Page
 @app.route('/details/<house>')
 def details(house):
     cur = conn.cursor()
 
-    cur.execute("""
-    SELECT name, role 
-    FROM Resident 
-    WHERE house_no=%s
-    """, (house,))
-
+    cur.execute("SELECT name, role FROM Resident WHERE house_no=%s", (house,))
     members = cur.fetchall()
 
-    return render_template("details.html",
-                           house=house,
-                           members=members)
+    return render_template("details.html", house=house, members=members)
 
 
-# 👨‍👩‍👧 MEMBERS PAGE
+# 🔹 Members Page
 @app.route('/members/<house>')
 def members(house):
     cur = conn.cursor()
 
-    cur.execute("""
-    SELECT name, role 
-    FROM Resident 
-    WHERE house_no=%s
-    """, (house,))
-
+    cur.execute("SELECT name, role FROM Resident WHERE house_no=%s", (house,))
     members = cur.fetchall()
 
-    return render_template("members.html",
-                           house=house,
-                           members=members)
+    return render_template("members.html", house=house, members=members)
 
 
 app.run(debug=True)
