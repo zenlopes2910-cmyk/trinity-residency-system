@@ -1,0 +1,23 @@
+body {
+    font-family: Arial;
+    background: #f5f7fb;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.box {
+    margin: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
