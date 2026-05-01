@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaints</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>Trinity Residency</h2>
+        <ul>
+            <li onclick="go('/')">Dashboard</li>
+            <li onclick="go('/residents')">Residents</li>
+            <li class="active">Complaints</li>
+            <li>Maintenance</li>
+            <li>Notices</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <h2>Complaints</h2>
+            <button class="btn" onclick="go('/raise')">+ Raise Complaint</button>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter">
+            <select>
+                <option>All</option>
+                <option>Open</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+            </select>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Resident</th>
+                <th>Issue</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            <!-- EMPTY NOW → DB later -->
+            <tr>
+                <td colspan="5" style="text-align:center;">No complaints yet</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
