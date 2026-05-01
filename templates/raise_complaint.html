@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raise Complaint</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>Trinity Residency</h2>
+        <ul>
+            <li onclick="go('/')">Dashboard</li>
+            <li onclick="go('/residents')">Residents</li>
+            <li onclick="go('/complaints')">Complaints</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <h2>Raise Complaint</h2>
+
+        <form class="form">
+
+            <label>Issue Type</label>
+            <select>
+                <option>Plumbing</option>
+                <option>Electricity</option>
+                <option>Cleaning</option>
+            </select>
+
+            <label>Description</label>
+            <textarea placeholder="Write details..."></textarea>
+
+            <button class="btn">Submit</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
