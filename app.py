@@ -67,3 +67,11 @@ def members(house):
 
 
 app.run(debug=True)
+
+@app.route('/complaints')
+def complaints():
+    return render_template("complaints.html")
+
+@app.route('/raise')
+def raise_complaint():
+    return render_template("raise_complaint.html")
