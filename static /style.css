@@ -1,6 +1,11 @@
 body {
+    margin: 0;
     font-family: Arial;
     background: #f5f7fb;
+}
+
+.title {
+    padding: 20px;
 }
 
 .cards {
@@ -10,14 +15,16 @@ body {
 }
 
 .card {
+    width: 200px;
     padding: 20px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.box {
-    margin: 40px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
+.card:hover {
+    transform: scale(1.05);
 }
